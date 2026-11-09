@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/*
+ * Paleta de la marca basada en los colores de la cotización PDF
+ * de VIA ELEVADORES: rojo (#C00000 / #DA2221), verde (#70AD47),
+ * verde claro (#E2EFDA) y gris (#E7E6E6).
+ */
+@theme {
+  --color-brand-50: #fdf3f3;
+  --color-brand-100: #fae3e3;
+  --color-brand-200: #f2c4c4;
+  --color-brand-300: #e79a9a;
+  --color-brand-400: #d96666;
+  --color-brand-500: #da2221;
+  --color-brand-600: #c00000;
+  --color-brand-700: #a00000;
+  --color-brand-800: #7a0000;
+  --color-brand-900: #530000;
+
+  --color-brand-green-50: #f0f7eb;
+  --color-brand-green-100: #e2efda;
+  --color-brand-green-200: #c6e0b5;
+  --color-brand-green-300: #a3cc8a;
+  --color-brand-green-400: #88bd69;
+  --color-brand-green-500: #70ad47;
+  --color-brand-green-600: #5c9439;
+  --color-brand-green-700: #4e7a36;
+  --color-brand-green-800: #3f632c;
+  --color-brand-green-900: #324a24;
+
+  --color-brand-wash: #e7e6e6;
+  --color-brand-bg: #f6f5f3;
+
+  /* ===== Tema oscuro de la interfaz (negro/rojo) ===== */
+  --color-ui-bg: #0e0e11;
+  --color-ui-card: #161619;
+  --color-ui-card-2: #1e1e24;
+  --color-ui-border: #2a2a31;
+  --color-ui-text: #f4f2f0;
+  --color-ui-muted: #b0adb4;
+  --color-ui-muted-2: #6f6c75;
+  --color-ui-redwash: #270a0a;
+  --color-ui-greenwash: #0f1c0c;
+
+  --color-background: #ffffff;
+  --color-foreground: #1f1f1f;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--color-ui-bg);
+  color: var(--color-ui-text);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Estilos al imprimir: oculta navegación y deja solo el documento. */
+@media print {
+  body {
+    background: #ffffff;
+  }
+  header,
+  footer,
+  .print\:hidden {
+    display: none !important;
+  }
+  .document-paper {
+    max-width: 100% !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+  }
+  main {
+    padding: 0 !important;
+  }
+}
+
